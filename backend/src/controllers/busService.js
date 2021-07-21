@@ -26,8 +26,9 @@ const eachBusDetail = async (req, res) => {
   res.status(200).json(dataObj);
 };
 
-router.get("/v1/api/busservice", getBusService);
+router.get("/", getBusService);
+router.post("/", postBusDetails);
+router.delete("/:id", deleteBusDetails);
+router.get("/:id", eachBusDetail);
 
-router.post("/v1/api/busservice", postBusDetails);
-router.delete("/v1/api/busservice/:id", deleteBusDetails);
-router.get("/v1/api/busservice/:id", eachBusDetail);
+module.exports = router;

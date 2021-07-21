@@ -46,7 +46,7 @@ const getOneRoute = async (req, res) => {
   });
 };
 
-router.get("/v1/api/routes", getAllRoutes);
-router.get("/v1/api/routes/:departure/:arrival/:date", getOneRoute);
+router.get("/", getAllRoutes);
+router.get("/:departure/:arrival/:date", getOneRoute);
 
 module.exports = router;

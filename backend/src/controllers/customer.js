@@ -13,5 +13,5 @@ const addNewCustomer = async (req, res) => {
     res.send(newCustomer);
   }
 };
-router.post("/v1/api/customers", addNewCustomer);
+router.post("/", addNewCustomer);
 module.exports = router;
