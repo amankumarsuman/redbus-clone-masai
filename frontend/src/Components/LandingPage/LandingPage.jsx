@@ -7,6 +7,8 @@ import { getRoutes } from "../../Redux/routes/action";
 import Coupan from "./Coupan/Coupan";
 import Awards from "./Awards and Recognition/Awards";
 import Services from "./Services/Services";
+import Safety from "./Safety/Safety";
+import GlobalPresence from "./Global Presence/GlobalPresence";
 
 const LandingPage = () => {
   const history = useHistory();
@@ -125,8 +127,11 @@ const LandingPage = () => {
         </div>
       </div>
      <Coupan/>
+     <Safety/>
      <Services/>
+     
      <Awards/>
+     <GlobalPresence/>
     </div>
   );
 };
