@@ -1,13 +1,16 @@
 const Route = require("../models/route");
 const Bus = require("../models/bus");
 const Booking = require("../models/booking");
-exports.getAllRoutes = async (req, res) => {
+const express = require("express");
+const router = express.Router();
+
+const getAllRoutes = async (req, res) => {
   let routes = await Route.find().lean().exec();
   res.send(routes);
 };
 
 // get route,buses and available seats
-exports.getOneRoute = async (req, res) => {
+const getOneRoute = async (req, res) => {
   let departure = req.params.departure;
   let arrival = req.params.arrival;
   let date = req.params.date;
@@ -32,9 +35,9 @@ exports.getOneRoute = async (req, res) => {
       .lean()
       .exec();
     bookings.forEach((booking) => {
-      currentBusSeats = [...currentBusSeats, ...booking.seats];
+      currentSeats = [...currentSeats, ...booking.seats];
     });
-    busIdWithBookedSeats[bus._id.toString()] = currentBusSeats;
+    busIdWithBookedSeats[bus._id.toString()] = currentSeats;
   });
   res.send({
     route: route,
@@ -42,3 +45,8 @@ exports.getOneRoute = async (req, res) => {
     busIdWithBookedSeats,
   });
 };
+
+router.get("/v1/api/routes", getAllRoutes);
+router.get("/v1/api/routes/:departure/:arrival/:date", getOneRoute);
+
+module.exports = router;
