@@ -1,11 +1,21 @@
-import React from 'react'
+import React from "react";
+import { Switch, Route } from "react-router-dom";
 
-function Routes() {
-    return (
-        <div>
-            Routes needed here      
-        </div>
-    )
-}
+import LandingPage from "../Components/LandingPage/LandingPage";
 
-export default Routes
+const Routes = () => {
+  return (
+    <>
+      <Switch>
+        <Route path="/" exact>
+          <LandingPage />
+        </Route>
+       
+       
+     
+      </Switch>
+    </>
+  );
+};
+
+export default Routes;
