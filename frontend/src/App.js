@@ -1,14 +1,16 @@
-import './App.css';
-import Routes from './Routing/Routes';
+import React from "react";
 
+import Navbar from "./Components/Navbar/Navbar";
+import Routes from "./Routing/Routes";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
+    <div style={{ overflowX: "hidden" }}>
+      <Navbar />
       <Routes />
-
+      
     </div>
   );
-}
+};
 
 export default App;
