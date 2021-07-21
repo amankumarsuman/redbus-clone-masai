@@ -17,7 +17,14 @@
   }
   .LandingPage__form input,
   .LandingPage__form button {
-    height: 45px;
+    height: 40px;
+   
+  }
+  .LandingPage__form button {
+      margin-left: 5px;
+      
+
+      border-radius: 5px;
   }
   
   .LandingPage__form__arrival__input > input,
@@ -25,7 +32,7 @@
   .LandingPage__form__date > input,
   .LandingPage__form__button > button {
     width: 100%;
-    padding: 5px;
+    
   }
   
   .LandingPage__form__button > button {
@@ -37,6 +44,8 @@
     font-weight: bold;
     font-size: 16px;
     cursor: pointer;
+    padding: 10px;
+    
   }
   .LandingPage__form__arrival__dropdown,
   .LandingPage__form__departure__dropdown {

@@ -1,11 +1,12 @@
 import React from "react";
 
-
-
 import styles from "./LandingPage.module.css";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getRoutes } from "../../Redux/routes/action";
+import Coupan from "./Coupan/Coupan";
+import Awards from "./Awards and Recognition/Awards";
+import Services from "./Services/Services";
 
 const LandingPage = () => {
   const history = useHistory();
@@ -28,7 +29,6 @@ const LandingPage = () => {
   }, [dispatch]);
 
   
-   
 
   return (
     <div>
@@ -102,7 +102,6 @@ const LandingPage = () => {
                 let departureTemp = departure;
                 let arrivalTemp = arrival;
 
-                // Sublocation 1 (Lucknow)
                 if (departureTemp.includes("(")) {
                   departureTemp = departureTemp.substring(
                     departureTemp.indexOf("(") + 1,
@@ -125,9 +124,9 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      
-    
-     
+     <Coupan/>
+     <Services/>
+     <Awards/>
     </div>
   );
 };
