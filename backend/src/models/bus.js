@@ -34,6 +34,11 @@ const busSchema = new Schema({
     type: Number,
     required: true,
   },
+  busServices: {
+    type: Schema.Types.ObjectId,
+    ref: "BusServices",
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("Buses", busSchema);
