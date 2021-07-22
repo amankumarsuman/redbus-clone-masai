@@ -1,0 +1,23 @@
+.blog{
+ padding: 50px;
+  
+}
+.blog h2{
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #4a4a4a;
+    word-break: break-word;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px
+}
+
+.blog p,ul{
+    color: #7e7e8c;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}

@@ -1,0 +1,67 @@
+.busHire_Footer {
+    background-color: #1b2330;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  .busHireFooterTextSection {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+
+  .busHireFooterEachTextSection > p:hover{
+      color: hotpink;
+      text-decoration: red;
+      border: 1px solid red;
+      background-color: green;
+      text-align: center;
+      border-radius: 10px;
+     padding-top: 10px;
+    }
+  .busHireFooterEachTextSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .busHireFooterEachTextSection > h3,
+  .copyRightText {
+    font-weight: 700;
+    line-height: 1.26;
+    color: #9c9999;
+    margin-bottom: 4px;
+    font-size: 12px;
+  }
+  .busHireFooterEachTextSection > p {
+    padding-bottom: 10px;
+    color: #d7d7d7;
+    margin-top: 8px;
+    font-size: 12px;
+  }
+  .busHireFooterimageSection {
+    
+    width: 30%;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .busHireFooterimageSection  img{
+      width: 60px;
+  }
+  .footerPara{
+      color: grey;
+      margin-top: 20px;
+      margin-bottom: 20px;
+  
+      width: 75%;
+     
+  }
+  .fb,.twit{
+      margin-right: 10px;
+      border: 2px solid grey;
+      padding: 10px;
+      border-radius: 25px;
+      margin-bottom: 10px;
+  }

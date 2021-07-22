@@ -7,6 +7,10 @@ import { getRoutes } from "../../Redux/routes/action";
 import Coupan from "./Coupan/Coupan";
 import Awards from "./Awards and Recognition/Awards";
 import Services from "./Services/Services";
+import Safety from "./Safety/Safety";
+import GlobalPresence from "./Global Presence/GlobalPresence";
+import Footer from "./Footer/Footer";
+import SubFooter from "./SubFooter/SubFooter";
 
 const LandingPage = () => {
   const history = useHistory();
@@ -39,7 +43,7 @@ const LandingPage = () => {
               <input
                 type="text"
                 placeholder="Source"
-                value={departure}
+                // value={departure}
                 // onChange={onDepartureChange}
               />
             </div>
@@ -125,8 +129,12 @@ const LandingPage = () => {
         </div>
       </div>
      <Coupan/>
+     <Safety/>
      <Services/>
+     
      <Awards/>
+     <GlobalPresence/>
+   
     </div>
   );
 };
