@@ -1,14 +1,18 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import styles from "./Coupan.module.css";
-
 const Coupan = () => {
+    let history=useHistory()
+    const handleClickIndo=()=>{
+      history.push("https://www.redbus.in/info/OfferTerms#FIRST")
+    }
   return (
     <div className={styles.couponContainer}>
       <div className={styles.flex}>
         <div className={styles.coupon}>
           <span>save upto rs 150</span>
           <span className={styles.offerImage}>
-            <img
+            <img onClick={handleClickIndo}
               src="https://st.redbus.in/Images/INDOFFER/safetyplus/274_147.png"
               alt="coupon-1"
             />
