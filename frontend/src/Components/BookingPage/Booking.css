@@ -74,8 +74,8 @@
 }
 .bookingPageMiddle{
     display: grid;
-    grid-template-columns: 20% 80%;
-    column-gap: 5px;
+    grid-template-columns: 18% 80%;
+    column-gap: 20px;
     text-align: left;
 }
 
@@ -118,9 +118,9 @@
   border: 1px solid gray;
   padding: 10px;
  } 
-.busDetails:hover{
+/* .busDetails:hover{
      
-}
+} */
  .busDetailsOne{
      display: grid;
      grid-template-columns: 30% 70%;
@@ -229,9 +229,9 @@
     font-weight: 700;
   }
 
-  .seatLegend{
+  /* .seatLegend{
 
-  }
+  } */
   .seatLegend h3 {
     display: block;
     font-size: 1.17em;
@@ -277,4 +277,38 @@
     border: none;
     text-align: center;
     color: #fff;
+  }
+
+  .filterbuttons input {
+      border: none;
+      background-color: white;
+      word-break: break-word;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 200;
+  }
+  .filterbuttons p{
+    color: #3e3e52;
+    font-size: 12px;
+    font-weight: 700;
+    word-break: break-word;
+    font-family: Montserrat;
+  }
+
+  .lowerbuttons > input {
+    height: 30px;
+    width: 92%;
+    margin-left: -10px;
+    padding-left: 25px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+  }
+
+  .lastbuttons > input {
+    height: 30px;
+     
+    margin-left: -10px;
+    padding-left: 25px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
   }

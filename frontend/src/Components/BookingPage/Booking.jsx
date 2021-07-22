@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import { Blog } from './Blog'
 import './Booking.css'
+import { BusTimings } from './BusTimings'
 const Booking =()=> {
     const [modify, setModify]= useState(false)
     const [view, setView]= useState(false)
@@ -35,10 +37,89 @@ const Booking =()=> {
             </div>}
            <hr/>
            <div className="bookingPageMiddle"> 
-               {/* Filter button */}
-               <div>       
+               {/* Filter buttons */}
+               <div className="filterbuttons">  
+                   <div>
                    <p>FILTERS</p>
+                   <hr/>
+                   <input type="button" value="Live Tracking (11)                              ✓" />
+                     <hr/>
+                   <input type="button" value="Reschedulable (13)                              ✓" />
+                   <hr/>
+                    </div>     
+                    
+                   <div>
+                   <p>DEPARTURE TIME </p>
+                   <input  type="checkbox" name="midnight" value="" />
+                      <label>Before 6 am (0)</label>
+                     <hr/>
+                     <input  type="checkbox" name="morning" value="6 am to 12 pm (0)" />
+                     <label>6 am to 12 pm (0)</label>
+                     <hr/>
+                     <input  type="checkbox" name="evening" value="12 pm to 6 pm (12)" />
+                     <label>12 pm to 6 pm (12)</label>
+                     <hr/>
+                     <input  type="checkbox" name="afternoon" value="After 6 pm (11)" />
+                     <label>After 6 pm (11)</label>
                </div>
+               <div>
+                   <p>BUS TYPES</p>
+                   <input type="checkbox" name="seater" value="" />
+                    <label>SEATER (10)</label>
+                     <hr/>
+
+                     <input type="checkbox" name="sleeper" value="" />
+                    <label>SLEEPER (0)</label>
+                     <hr/>
+
+                     <input type="checkbox" name="ac" value="" />
+                    <label>AC (12)</label>
+                     <hr/>
+
+                     <input type="checkbox" name="nonac" value="" />
+                    <label>NONAC (1)</label>
+
+               </div>
+               <div>
+                   <p>ARRIVAL TIME </p>
+                     <input  type="checkbox" name="midnight" value="" />
+                      <label>Before 6 am (0)</label>
+                     <hr/>
+                     <input  type="checkbox" name="morning" value="6 am to 12 pm (0)" />
+                     <label>6 am to 12 pm (0)</label>
+                     <hr/>
+                     <input  type="checkbox" name="evening" value="12 pm to 6 pm (12)" />
+                     <label>12 pm to 6 pm (12)</label>
+                     <hr/>
+                     <input  type="checkbox" name="afternoon" value="After 6 pm (11)" />
+                     <label>After 6 pm (11)</label>
+
+               </div>
+               <div className="lowerbuttons">
+                   <p>BOARDING POINT</p>
+                   <input type="button" value="BOARDING POINT"/>
+               </div>
+               <div className="lowerbuttons">
+                   <p>DROPPING POINT</p>
+                   <input type="button" value="DROPPING POINT"/>
+               </div>
+               <div className="lowerbuttons">
+                   <p>OPERATOR</p>
+                   <input type="button" value="OPERATOR"/>
+               </div>
+                <div className="lastbuttons">
+                    <p>AMENITIES</p>
+                    <input type="button" value="WIFI (3)"/><br/>
+                    <input type="button" value="Water Bottle (3)"/><br/>
+                    <input type="button" value="Blankets (3)"/><br/>
+                    <input type="button" value="Charging Point (8)"/> <br/>
+                    <input type="button" value="Track My Bus (11)"/><br/>
+                    <input type="button" value="Emergency Contact Nu... (7)"/>
+                    
+
+                </div>
+               </div>
+                
                <div>
                      {/* Advertising Cards */}
                     <div className="topImages">
@@ -153,6 +234,9 @@ const Booking =()=> {
                </div>
 
            </div>
+           <Blog/>
+           <hr/>
+           <BusTimings/>
         </div>
     )
 }
