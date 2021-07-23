@@ -29,7 +29,7 @@ const getOneRoute = async (req, res) => {
 
   // get the seats booked for each matched buses
   availableBuses.forEach((bus) => {
-    const bookings = await Booking.find({
+    const bookings = Booking.find({
       $and: { "departureDetails.date": date, busId: bus._id },
     })
       .lean()
