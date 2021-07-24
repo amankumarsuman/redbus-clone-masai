@@ -14,6 +14,7 @@ const getOneRoute = async (req, res) => {
   let departure = req.params.departure;
   let arrival = req.params.arrival;
   let date = req.params.date;
+  let { sort } = request.query;
 
   // get the relevant route
   let route = await Route.find({
@@ -23,12 +24,15 @@ const getOneRoute = async (req, res) => {
     .exec();
 
   // get all buses for this route
-  let availableBuses = await Bus.find({ routes: route._id }).lean().exec();
+  let availableBuses = await Bus.find({ routes: route._id })
+    .sort(sort ? { [sort]: -1 } : null)
+    .lean()
+    .exec();
 
   const busIdWithBookedSeats = {};
 
   // get the seats booked for each matched buses
-  availableBuses.forEach((bus) => {
+  availableBuses.forEach(async (bus) => {
     const bookings = await Booking.find({
       $and: { "departureDetails.date": date, busId: bus._id },
     })
@@ -46,7 +50,13 @@ const getOneRoute = async (req, res) => {
   });
 };
 
+const addRoute = async (req, res) => {
+  const route = await Route.create(req.body);
+  res.send({ message: "route added", data: route });
+};
+
 router.get("/", getAllRoutes);
+router.post("/", addRoute);
 router.get("/:departure/:arrival/:date", getOneRoute);
 
 module.exports = router;
