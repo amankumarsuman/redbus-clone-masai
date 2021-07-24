@@ -25,11 +25,15 @@ body {
   color: #fff;
   margin-top: 8px;
 }
-.bookInEasyStepsdiv,
 .withBusHireYouCanGet,
 .VehicleYouCanGet,
 .whyBookWithBushire {
-  margin: 3% 7%;
+  margin: 3% 17%;
+  display: flex;
+  flex-direction: column;
+}
+.bookInEasyStepsdiv{
+  margin: 3% 17%;
   display: flex;
   flex-direction: column;
 }
