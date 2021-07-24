@@ -1,0 +1,43 @@
+.Header {
+}
+.HeaderOne {
+  background-color: #f8f4f4;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+}
+.HeaderOne > p:nth-child(1) {
+  margin: 10px 0px;
+}
+.HeaderTwo {
+  padding: 10px 10px;
+}
+.HeaderTwo > * {
+  display: inline-block;
+  margin-right: 10px;
+}
+.HeaderTwo > button {
+  padding: 5px;
+  width: 100px;
+  background-color: #f8f4f4;
+  border: 1px solid black;
+  border-radius: 2px;
+  outline: none;
+}
+.topImages{
+  display: flex;
+  flex-flow: wrap;
+  column-gap: 10px;
+  margin-top: 20px;
+  /* margin: auto; */
+  margin-left: 250px;
+}
+.topImages  img{
+  width: 183px;
+  height: 120px;
+  margin-right: 25px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  border-radius: 7px;
+  position: relative;
+}

@@ -3,7 +3,7 @@ import * as actionTypes from "./actionTypes";
 const initState = {
   isLoading: false,
   isError: false,
-  routes: "/",
+  routes: null,
 };
 
 const routesReducer = (state = initState, action) => {
