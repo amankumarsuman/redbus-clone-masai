@@ -1,5 +1,7 @@
 import * as actionTypes from "./actionTypes";
 import axios from "axios";
+
+const baseURL = "http://localhost:8000/api";
 const getRoutesRequest = () => {
   return {
     type: actionTypes.GET_ROUTES_REQUEST,
@@ -21,7 +23,7 @@ const getRoutes = () => {
   return async (dispatch) => {
     dispatch(getRoutesRequest());
     try {
-      const res = await axios.get("http://localhost:8000/api/location");
+      const res = await axios.get(`${baseURL}/location`);
       dispatch(getRoutesSuccess(res.data));
     } catch (err) {
       dispatch(getRoutesFailure());
