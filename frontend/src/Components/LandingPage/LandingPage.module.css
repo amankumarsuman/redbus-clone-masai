@@ -32,6 +32,8 @@
   .LandingPage__form__date > input,
   .LandingPage__form__button > button {
     width: 100%;
+    border: 1px solid red;
+   
     
   }
   
@@ -53,6 +55,7 @@
     background-color: white;
     overflow-y: scroll;
     height: 200px;
+   
   }
   .LandingPage__form__arrival__dropdown li,
   .LandingPage__form__departure__dropdown li {

@@ -1,6 +1,7 @@
- 
 import React from "react";
- import { Booking } from "./Components/BookingPage/Booking";
+import { Booking } from "./Components/Booking-page/Booking";
+import Footer from "./Components/LandingPage/Footer/Footer";
+import SubFooter from "./Components/LandingPage/SubFooter/SubFooter";
 
 import Navbar from "./Components/Navbar/Navbar";
 import Routes from "./Routing/Routes";
@@ -8,10 +9,10 @@ import Routes from "./Routing/Routes";
 const App = () => {
   return (
     <div style={{ overflowX: "hidden" }}>
-      {/* <Navbar />
-      <Routes /> */}
-      <Booking/>
-      
+      <Navbar />
+      <Routes />
+      <SubFooter />
+      <Footer />
     </div>
   );
 };
