@@ -18,12 +18,13 @@ const getRoutesFailure = () => {
     type: actionTypes.GET_ROUTES_FAILURE,
   };
 };
-const getRoutes = () => {
-  console.log("heloooo");
+const getRoutes = (departure, arrival, date) => {
   return async (dispatch) => {
     dispatch(getRoutesRequest());
     try {
-      const res = await axios.get(`${baseURL}/location`);
+      const res = await axios.get(
+        `${baseURL}/routes/${departure}/${arrival}/${date}`
+      );
       dispatch(getRoutesSuccess(res.data));
     } catch (err) {
       dispatch(getRoutesFailure());

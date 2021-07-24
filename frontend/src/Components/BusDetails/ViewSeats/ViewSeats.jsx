@@ -21,7 +21,6 @@ const ViewSeats = ({
 }) => {
   const [selectedSeats, setSelectedSeats] = React.useState([]);
   const alreadyBookedSeats = filledSeats;
-
   const [boardAndDrop, setBoardAndDrop] = React.useState(false);
 
   const handleBoardAndDrop = () => {
@@ -175,12 +174,12 @@ const ViewSeats = ({
               <div>
                 <span style={{ fontSize: "16px", color: "#3e3e52" }}>
                   <FiberManualRecordIcon style={{ fontSize: "12px" }} />
-                  &nbsp;&nbsp; {routeDetails["departureLocation"]["name"]}
+                  &nbsp;&nbsp; {routeDetails.route["departureLocation"]["name"]}
                 </span>
                 <br />{" "}
                 <span style={{ fontSize: "14px", color: "#7e7e8c" }}>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  {routeDetails["departureLocation"]["name"]}
+                  {routeDetails.route["departureLocation"]["name"]}
                 </span>
               </div>
             </div>
@@ -195,12 +194,12 @@ const ViewSeats = ({
               <div>
                 <span style={{ fontSize: "16px", color: "#3e3e52" }}>
                   <FiberManualRecordOutlinedIcon style={{ fontSize: "12px" }} />
-                  &nbsp;&nbsp; {routeDetails["arrivalLocation"]["name"]}
+                  &nbsp;&nbsp; {routeDetails.route["arrivalLocation"]["name"]}
                 </span>
                 <br></br>
                 <span style={{ fontSize: "14px", color: "#7e7e8c" }}>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  {routeDetails["arrivalLocation"]["name"]}
+                  {routeDetails.route["arrivalLocation"]["name"]}
                 </span>
               </div>
             </div>
@@ -237,7 +236,7 @@ const ViewSeats = ({
       {!boardAndDrop && selectedSeats.length > 0 && (
         <SubRoutes
           handleBoardAndDrop={handleBoardAndDrop}
-          routeDetails={routeDetails}
+          routeDetails={routeDetails.route}
           busArrivalTime={busArrivalTime}
           busDepartureTime={busDepartureTime}
         />

@@ -9,78 +9,56 @@ import WbIncandescentIcon from "@material-ui/icons/WbIncandescent";
 import Tooltip from "@material-ui/core/Tooltip";
 import DirectionsBusIcon from "@material-ui/icons/DirectionsBus";
 import GpsFixedIcon from "@material-ui/icons/GpsFixed";
-import RestoreIcon from "@material-ui/icons/Restore";
 import { BottomTabs } from "../BottomTabs/BottomTabs";
-import { useDispatch } from "react-redux";
-import { updateBookingDetails } from "../../../Redux/BookBus/action";
 
 const BusBox = ({
   _id,
   rating,
-  operatorName,
+  operatorName = "New One",
   busType,
+  fare,
   departureTime,
   liveTracking,
-  reschedulable,
   filledSeats,
   routeDetails,
 }) => {
   // capturing duration in redux store
-  let dispatch = useDispatch();
-  React.useEffect(() => {
-    const payload1 = {
-      key: "duration",
-      value: routeDetails["duration"],
-    };
-
-    dispatch(updateBookingDetails(payload1));
-  }, [routeDetails,dispatch]);
-
-  var avgRating = 0;
-  var totalReviews = 0;
-  rating.forEach((item, index) => {
-    avgRating += (index + 1) * item;
-    totalReviews += item;
-  });
-
-  avgRating = (avgRating / totalReviews).toFixed(1);
-
-  var seatPrice = 0;
-  var busTypeName = "";
-  if (busType === 1) {
-    seatPrice = 50 * Math.floor(routeDetails["duration"] / 2);
-    busTypeName = "Seater";
-  } else if (busType === 2) {
-    seatPrice = 100 * Math.floor(routeDetails["duration"] / 2);
-    busTypeName = "Sleeper";
-  } else if (busType === 3) {
-    seatPrice = 125 * Math.floor(routeDetails["duration"] / 2);
-    busTypeName = "A/C Seater";
-  } else {
-    seatPrice = 75 * Math.floor(routeDetails["duration"] / 2);
-    busTypeName = "Non - A/C";
-  }
-
+  var avgRating = rating;
+  var totalReviews = 10;
+  var seatPrice = fare * Number(routeDetails.route.distance);
   var busDepartureTime = departureTime;
-  var busArrivalTime =
-    (Number(departureTime) + Number(routeDetails["duration"])) % 24;
+  var busArrivalTime = (
+    Number(departureTime) +
+    Math.ceil(Number(routeDetails.route["duration"])) / 60
+  ).toFixed(0);
+
+  console.log(
+    routeDetails,
+    avgRating,
+    totalReviews,
+    seatPrice,
+    busDepartureTime,
+    busArrivalTime
+  );
   return (
     <div className={styles.busBox}>
       <div className={styles.busBoxSection1}>
         <div className={styles.busBoxSection11}>
           <div>{operatorName}</div>
-          <div>{busTypeName}</div>
+          <div>{busType}</div>
         </div>
         <div className={styles.busBoxSection12}>
           <div>{busDepartureTime}:00</div>
-          <div>{routeDetails["departureLocation"]["name"]}</div>
+          <div>{routeDetails.route["departureLocation"]["name"]}</div>
         </div>
         <div className={styles.busBoxSection13}>
-          <div>{routeDetails["duration"]}&nbsp;h</div>
+          <div>
+            {Number(routeDetails.route["duration"] / 60).toFixed(0)}&nbsp;h
+          </div>
         </div>
         <div className={styles.busBoxSection14}>
           <div>{busArrivalTime}:00</div>
-          <div>{routeDetails["arrivalLocation"]["name"]}</div>
+          <div>{routeDetails.route["arrivalLocation"]["name"]}</div>
         </div>
         <div className={styles.busBoxSection15}>
           <div>
@@ -168,18 +146,6 @@ const BusBox = ({
                 }}
               />
               <span>Live Tracking</span>
-            </div>
-          )}
-          {reschedulable === 1 && (
-            <div>
-              <RestoreIcon
-                style={{
-                  fontWeight: "50",
-                  fontSize: "20px",
-                  marginRight: "6px",
-                }}
-              />
-              <span>Reschedulable</span>
             </div>
           )}
         </div>
