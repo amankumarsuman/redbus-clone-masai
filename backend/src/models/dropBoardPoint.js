@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
 const dropBoardSchema = new mongoose.Schema({
-    id: { type: Number, required: true },
-    city: { type: String, required: true },
-    state: { type: String, required: true },
-    // q: { type: String, required: true },
+    id: { type: Number},
+    city: { type: String},
+    state: { type: String },
+    q: { type: String },
 }, {
     versionKey: false,
     timestamps: true

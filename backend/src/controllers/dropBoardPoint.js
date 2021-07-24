@@ -2,26 +2,23 @@ const DropBoards = require("../models/dropBoardPoint");
 const express = require("express");
 const router = express.Router();
 
-const postLocation = async (req, res) => {
-    const postData = await DropBoards.create(req.body);
-    res.status(201).json({ data: postData });
-};
+// const postLocation = async (req, res) => {
+//     const postData = await DropBoards.create(req.body);
+//     res.status(201).json({ data: postData });
+// };
 
-const getAllLocation = async (req, res) => {
-  const getData = await DropBoards.find();
-  res.status(200).json({ data: getData });
-};
+// const getAllLocation = async (req, res) => {
+//   const getData = await DropBoards.find();
+//   res.status(200).json({ data: getData });
+// };
 
-// const getAllSuggestion = async (req,res) => {
+const getAllSuggestion = async (req,res) => {
 
-  // const postQuery = await DropBoards.create(req.body);
-  // res.status(201).json({ data: postQuery });
-  // console.log(postQuery);
+  const postQuery = await DropBoards.create(req.body);
   
-  // const getSugg = await DropBoards.find( { city: { $regex: postQuery.q,$options:"$i" } });
-  // res.status(200).json({ data: getSugg });
-  // console.log(getSugg);
-// }
+  const getSugg = await DropBoards.find( { city: { $regex: postQuery.q,$options:"$i" } });
+  res.status(200).json({ data: getSugg });
+}
 
 const getOneLocation = async (req, res) => {
   const id = req.params.id;
@@ -41,10 +38,10 @@ const deleteLocation = async (req, res) => {
   res.status(201).json({ data: dataObj });
 };
 
-// router.post("/", getAllSuggestion);
-router.post("/", postLocation);
-// router.get("/", getAllSuggestion);
-router.get("/", getAllLocation);
+router.post("/", getAllSuggestion);
+// router.post("/", postLocation);
+router.get("/", getAllSuggestion);
+// router.get("/", getAllLocation);
 router.get("/:id", getOneLocation);
 router.patch("/:id", patchLocation);
 router.delete("/:id", deleteLocation);
