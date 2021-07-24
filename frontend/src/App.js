@@ -11,8 +11,8 @@ const App = () => {
     <div style={{ overflowX: "hidden" }}>
       <Navbar />
       <Routes />
-     <SubFooter/>
-     <Footer/>
+      <SubFooter />
+      <Footer />
     </div>
   );
 };

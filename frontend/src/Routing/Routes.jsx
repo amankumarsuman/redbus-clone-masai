@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import { Booking } from "../Components/Booking-page/Booking";
+import { Booking } from "../Components/BookingPage/Booking";
 
 import LandingPage from "../Components/LandingPage/LandingPage";
 
@@ -12,10 +12,8 @@ const Routes = () => {
           <LandingPage />
         </Route>
         <Route path="/booking" exact>
-        <Booking/>
+          <Booking />
         </Route>
-       
-     
       </Switch>
     </>
   );
