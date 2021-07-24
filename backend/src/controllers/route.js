@@ -46,8 +46,8 @@ const getOneRoute = async (req, res) => {
       if (busType == bus.busType) {
         return true;
       }
-      return false;
     }
+    return true;
   });
 
   const busIdWithBookedSeats = {};
