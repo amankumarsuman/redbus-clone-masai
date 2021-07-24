@@ -14,10 +14,7 @@ const bookingSchema = new Schema(
         age: { type: Number, required: true },
       },
     ],
-    phoneNumber: {
-      type: String,
-      required: true,
-    },
+
     fare: {
       type: Number,
       required: true,
