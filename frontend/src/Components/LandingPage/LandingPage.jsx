@@ -1,12 +1,14 @@
 import React from "react";
-
+import Services from "./Benefits/Services";
+import BusTracker from "./BusTracker/BusTracker";
+import Coupon from "./CouponSection/Coupon";
+import Safety from "./SafetySection/Safety";
 import styles from "./LandingPage.module.css";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getRoutes } from "../../Redux/routes/action";
-import Coupan from "./Coupan/Coupan";
 import Awards from "./Awards and Recognition/Awards";
-import Services from "./Services/Services";
+import GlobalPresence from "./Global Presence/GlobalPresence";
 
 const LandingPage = () => {
   const history = useHistory();
@@ -28,7 +30,63 @@ const LandingPage = () => {
     dispatch(getRoutes());
   }, [dispatch]);
 
-  
+  const routes = useSelector((state) => state.routesReducer.routes);
+  console.log("Routes are:", routes);
+
+  const onDepartureChange = (e) => {
+    let value = e.target.value;
+    setDeparture(value);
+
+    if (routes) {
+      let allSources = [];
+      routes.forEach((route) => {
+        allSources.push(route.departureLocation.name);
+        allSources = [
+          ...allSources,
+          route.departureLocation.name,
+          ...route.departureLocation.subLocations,
+        ];
+      });
+      allSources = Array.from(new Set(allSources));
+      let filteredSources = allSources.filter((source) =>
+        source.toLowerCase().includes(value.toLowerCase())
+      );
+      // console.log("Can search: ", routes.length, filteredSources);
+      if (filteredSources.length > 0 && value) {
+        console.log("hey true");
+        setFilteredSources(filteredSources);
+        setDisplayDepartureDropdown(true);
+      } else {
+        setDisplayDepartureDropdown(false);
+      }
+    }
+  };
+  const onArrivalChange = (e) => {
+    let value = e.target.value;
+    setArrival(value);
+    if (routes) {
+      let allDestinations = [];
+      routes.forEach((route) => {
+        allDestinations.push(route.arrivalLocation.name);
+        allDestinations = [
+          ...allDestinations,
+          route.arrivalLocation.name,
+          ...route.arrivalLocation.subLocations,
+        ];
+      });
+      allDestinations = Array.from(new Set(allDestinations));
+      let filteredDestinations = allDestinations.filter((source) =>
+        source.toLowerCase().includes(value.toLowerCase())
+      );
+
+      if (filteredDestinations.length > 0 && value) {
+        setFilteredDestinations(filteredDestinations);
+        setDisplayArrivalDropdown(true);
+      } else {
+        setDisplayArrivalDropdown(false);
+      }
+    }
+  };
 
   return (
     <div>
@@ -40,7 +98,7 @@ const LandingPage = () => {
                 type="text"
                 placeholder="Source"
                 value={departure}
-                // onChange={onDepartureChange}
+                onChange={onDepartureChange}
               />
             </div>
             {displayDepartureDropdown ? (
@@ -66,7 +124,7 @@ const LandingPage = () => {
                 type="text"
                 placeholder="Destination"
                 value={arrival}
-                // onChange={onArrivalChange}
+                onChange={onArrivalChange}
               />
             </div>
             {displayArrivalDropdown ? (
@@ -102,6 +160,7 @@ const LandingPage = () => {
                 let departureTemp = departure;
                 let arrivalTemp = arrival;
 
+                // Sublocation 1 (Lucknow)
                 if (departureTemp.includes("(")) {
                   departureTemp = departureTemp.substring(
                     departureTemp.indexOf("(") + 1,
@@ -124,9 +183,13 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-     <Coupan/>
-     <Services/>
-     <Awards/>
+      <Coupon />
+      <Safety />
+      <BusTracker />
+      <Services />
+      <Awards />
+      {/* <Awards /> */}
+      <GlobalPresence />
     </div>
   );
 };

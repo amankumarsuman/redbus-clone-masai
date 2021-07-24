@@ -72,15 +72,17 @@ const Navbar = () => {
       </div>
       <ul className={styles.Navbar__listTwo}>
         <div className={styles.rightSide_header}>
-          {/* <li onClick={() => setIsOpen(true)}>HELP</li> */}
-          <li onClick={() => setIsOpen(true)}>MANAGE BOOKING</li>
+           <li >HELP</li> 
+          <li >MANAGE BOOKING</li>
           <li>
             <div>
               <RiArrowDropDownLine
                 className={styles.icons}
                 onClick={handleClick}
+                
               />
               <Menu
+              style={{border:"1px solid red"}}
                 id="simple-menu"
                 anchorEl={anchorEl}
                 keepMounted
@@ -88,18 +90,18 @@ const Navbar = () => {
                 onClose={handleClose}
                 onClick={() => setIsOpen(true)}
               >
-                <MenuItem onClick={handleClose}>Bus Ticket</MenuItem>
-                <MenuItem onClick={handleClose}>Cancel</MenuItem>
-                <MenuItem onClick={handleClose}>Reschedule</MenuItem>
-                <MenuItem onClick={handleClose}>Show My Ticket</MenuItem>
-                <MenuItem onClick={handleClose}>Email / SMS</MenuItem>
+                <MenuItem style={{borderBottom:"1px solid red",borderRadius:"10px",marginRight:"5px",marginLeft:"5px",marginBottom:"5px"}} onClick={handleClose}>Bus Ticket</MenuItem>
+                <MenuItem style={{borderBottom:"1px solid red",borderRadius:"10px",marginRight:"5px",marginLeft:"5px",marginBottom:"5px"}} onClick={handleClose}>Cancel</MenuItem>
+                <MenuItem style={{borderBottom:"1px solid red",borderRadius:"10px",marginRight:"5px",marginLeft:"5px",marginBottom:"5px"}} onClick={handleClose}>Reschedule</MenuItem>
+                <MenuItem style={{borderBottom:"1px solid red",borderRadius:"10px",marginRight:"5px",marginLeft:"5px",marginBottom:"5px"}} onClick={handleClose}>Show My Ticket</MenuItem>
+                <MenuItem style={{borderBottom:"1px solid red",borderRadius:"10px",marginRight:"5px",marginLeft:"5px",marginBottom:"5px"}} onClick={handleClose}>Email / SMS</MenuItem>
               </Menu>
             </div>
           </li>
           <li>
             <MdAccountCircle
               className={styles.icons}
-              style={{ fontSize: "30px" }}
+              style={{ fontSize: "30px",marginLeft:"-10px" }}
             />
           </li>
           <li>
