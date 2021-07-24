@@ -25,10 +25,16 @@ const eachBus = async (req, res) => {
   const dataObj = await Bus.findById(id);
   res.status(200).json(dataObj);
 };
+const eachBusUpdate = async (req, res) => {
+  const id = req.params.id;
+  const dataObj = await Bus.findByIdAndUpdate(id, req.body);
+  res.status(200).json(dataObj);
+};
 
 router.get("/", getBus);
 router.post("/", postBus);
 router.delete("/:id", deleteBus);
 router.get("/:id", eachBus);
+router.patch("/:id", eachBusUpdate);
 
 module.exports = router;

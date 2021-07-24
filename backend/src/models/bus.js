@@ -29,7 +29,7 @@ const busSchema = new Schema(
     },
     fare: {
       type: Number,
-      required: true,
+      required: false,
     },
     busServices: {
       ac: { type: Boolean, default: false },
