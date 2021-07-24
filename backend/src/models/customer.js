@@ -6,10 +6,6 @@ const customerSchema = new Schema(
       type: String,
       required: true,
     },
-    googleId: {
-      type: String,
-      required: false,
-    },
     age: {
       type: Number,
       required: false,
@@ -23,10 +19,6 @@ const customerSchema = new Schema(
       required: true,
     },
     dateOfBirth: {
-      type: String,
-      required: false,
-    },
-    profilePicture: {
       type: String,
       required: false,
     },

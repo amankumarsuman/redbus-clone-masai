@@ -14,11 +14,12 @@ const getOneRoute = async (req, res) => {
   let departure = req.params.departure;
   let arrival = req.params.arrival;
   let date = req.params.date;
-  let { sort } = request.query;
-
+  let { sort } = req.query;
   // get the relevant route
-  let route = await Route.find({
-    $and: { departureLocation: departure, arrivalLocation: arrival },
+  let route = await Route.findOne({
+    $and: [
+      { "departureLocation.name": departure, "arrivalLocation.name": arrival },
+    ],
   })
     .lean()
     .exec();
@@ -32,21 +33,24 @@ const getOneRoute = async (req, res) => {
   const busIdWithBookedSeats = {};
 
   // get the seats booked for each matched buses
-  availableBuses.forEach(async (bus) => {
+  for (let i = 0; i < availableBuses.length; i++) {
     const bookings = await Booking.find({
-      $and: { "departureDetails.date": date, busId: bus._id },
+      $and: [{ "departureDetails.date": date, busId: availableBuses[i]._id }],
     })
       .lean()
       .exec();
+    // console.log(bookings);
+    let currentSeats = [];
     bookings.forEach((booking) => {
       currentSeats = [...currentSeats, ...booking.seats];
     });
-    busIdWithBookedSeats[bus._id.toString()] = currentSeats;
-  });
+    busIdWithBookedSeats[availableBuses[i]._id.toString()] = currentSeats;
+    console.log(busIdWithBookedSeats);
+  }
   res.send({
     route: route,
     availableBuses: availableBuses,
-    busIdWithBookedSeats,
+    busIdWithBookedSeats: busIdWithBookedSeats,
   });
 };
 

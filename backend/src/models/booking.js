@@ -14,20 +14,12 @@ const bookingSchema = new Schema(
         age: { type: Number, required: true },
       },
     ],
-    email: {
-      type: String,
-      required: true,
-    },
     phoneNumber: {
       type: String,
       required: true,
     },
     fare: {
       type: Number,
-      required: true,
-    },
-    status: {
-      type: String,
       required: true,
     },
     bookingDate: {

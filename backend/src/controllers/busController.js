@@ -26,7 +26,7 @@ const eachBus = async (req, res) => {
   res.status(200).json(dataObj);
 };
 
-router.get("/", getBusService);
+router.get("/", getBus);
 router.post("/", postBus);
 router.delete("/:id", deleteBus);
 router.get("/:id", eachBus);

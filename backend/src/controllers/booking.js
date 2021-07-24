@@ -7,12 +7,15 @@ const addBooking = async (req, res) => {
 };
 const getBooking = async (req, res) => {
   let { id } = req.params;
+  const booking = await Booking.find({ _id: id }).lean().exec();
+  res.send(booking);
+};
+const getAllBooking = async (req, res) => {
   const bookings = await Booking.find().lean().exec();
-  let filteredBookings = bookings.filter(
-    (booking) => booking.customerId.toString() == id
-  );
-  res.send(filteredBookings);
+
+  res.send(bookings);
 };
 router.post("/", addBooking);
+router.get("/", getAllBooking);
 router.get("/:id", getBooking);
 module.exports = router;

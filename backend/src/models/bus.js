@@ -2,10 +2,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const busSchema = new Schema(
   {
-    operatorName: {
-      type: String,
-      required: true,
-    },
     busType: {
       type: String,
       required: true,
@@ -15,7 +11,7 @@ const busSchema = new Schema(
       required: true,
     },
     rating: {
-      type: [Number],
+      type: Number,
       required: true,
     },
     totalSeats: {
@@ -27,18 +23,21 @@ const busSchema = new Schema(
       ref: "Routes",
       required: true,
     },
-    images: {
-      type: String,
-      required: true,
-    },
     liveTracking: {
       type: Number,
       required: true,
     },
-    busServices: {
-      type: Schema.Types.ObjectId,
-      ref: "BusServices",
+    fare: {
+      type: Number,
       required: true,
+    },
+    busServices: {
+      ac: { type: Boolean, default: false },
+      wifi: { type: Boolean, default: false },
+      cctv: { type: Boolean, default: false },
+      waterBottles: { type: Boolean, default: false },
+      vaccinatedStaff: { type: Boolean, default: false },
+      primo: { type: Boolean, default: false },
     },
   },
   {
