@@ -7,14 +7,16 @@ body {
   position: relative;
   box-shadow: 0 4px 8px 0 rgba(100, 100, 100, 0.5);
   display: flex;
-  width: 30%;
+  width: 40%;
   flex-direction: column;
   margin-top: 8px;
   padding: 0;
   box-sizing: border-box;
-  position: fixed;
+margin-left: 100px;
+margin-bottom: 50PX;
   right: 4%;
   top: 6.5%;
+
 }
 .outstationHeading {
   display: flex;
@@ -55,6 +57,7 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   padding: 20px;
+ 
 }
 .dottedDiv {
   width: 0px;

@@ -12,6 +12,16 @@
     max-height: 550px;
    border-bottom: 1px solid #ccc;
 }
+
+
+.globalPresenceContainer img{
+
+width: 200px;
+}
+.globalPresenceContainer img:hover{
+
+   
+    }
 .globalPresenceHeading{
     font-weight: 800;
     text-align: center;

@@ -37,6 +37,15 @@ const BusHire = () => {
             alt="banner"
             width="100%"
           />
+          <div>
+        
+          {active === "Bus Hire Form" && (
+            <BusHireForm handleClick={handleClick} />
+          )}
+          {active === "Type of trip" && (
+            <TripTypeContainer handleClick={handleClick} active={active} />
+          )}
+          </div>
           <div className={Styles.bannerElementDiv}>
             <div className={Styles.bannerBusHireText}>Bus Hire</div>
             <div className={Styles.bannerBusHireSubText}>
@@ -607,13 +616,9 @@ const BusHire = () => {
                 <BusHireFooter/> */}
 
         {/* tripTypeContainer */}
-        {active === "Type of trip" && (
-          <TripTypeContainer handleClick={handleClick} active={active} />
-        )}
+       
         {/* busHireForm */}
-        {active === "Bus Hire Form" && (
-          <BusHireForm handleClick={handleClick} />
-        )}
+       
       </div>
     </div>
   );
