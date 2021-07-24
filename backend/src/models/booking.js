@@ -35,18 +35,12 @@ const bookingSchema = new Schema(
     departureDetails: {
       city: { type: String, required: true },
       location: { type: String, required: true },
-      time: { type: Number, required: true },
       date: { type: String, required: true },
     },
     arrivalDetails: {
       city: { type: String, required: true },
       location: { type: String, required: true },
-      time: { type: String, required: true },
       date: { type: String, required: true },
-    },
-    duration: {
-      type: String,
-      required: true,
     },
     isBusinessTravel: {
       type: Boolean,

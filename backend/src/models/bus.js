@@ -18,11 +18,13 @@ const busSchema = new Schema(
       type: Number,
       required: false,
     },
-    routes: {
-      type: Schema.Types.ObjectId,
-      ref: "Routes",
-      required: true,
-    },
+    routes: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Routes",
+        required: true,
+      },
+    ],
     liveTracking: {
       type: Number,
       required: true,
