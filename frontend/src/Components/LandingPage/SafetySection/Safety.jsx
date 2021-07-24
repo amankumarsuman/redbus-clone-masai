@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Safety.module.css";
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuid} from "uuid";
 const arr = [
   {
     heading: "Sanitized Bus ",
@@ -36,15 +36,15 @@ const Safety = () => {
         >
           Know more
         </span>
-        <p>
-          Look for buses with &nbsp;{" "}
-          <span className={styles.boldspan}> safety+ </span> &nbsp; tag while
+        <p className={styles.img}>
+          <img src="http://s3.rdbuz.com/images/webplatform/india/HeroFeature/tip-icon.png" />Look for buses with &nbsp;{" "}
+          <span className={styles.boldspan}> <img className={styles.img1} src="https://st.redbus.in/Images/safety/landing/measures/safety_plus_tag.svg"/></span> &nbsp; tag while
           booking your journey
         </p>
         <div className={styles.lowerFlex}>
           {arr.map((item) => {
             return (
-              <div key={uuidv4()} className={styles.lowerFlexItems}>
+              <div key={uuid()} className={styles.lowerFlexItems}>
                 <h3>{item.heading}</h3>
                 <p>{item.descriptions}</p>
               </div>

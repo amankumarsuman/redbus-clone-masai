@@ -1,10 +1,8 @@
 import React from "react";
-import { Booking } from "./Components/Booking-page/Booking";
-import Footer from "./Components/LandingPage/Footer/Footer";
-import SubFooter from "./Components/LandingPage/SubFooter/SubFooter";
-
+import BusHireFooter from "./Components/Bus hire Main Page/Bus Hire Footer Section/BusHireFooter";
+import SubFooter from "./Components/Bus hire Main Page/Sub Footer Section/SubFooter";
 import Navbar from "./Components/Navbar/Navbar";
-import Routes from "./Routing/Routes";
+import Routes from "./Routes/Routes";
 
 const App = () => {
   return (
@@ -12,7 +10,7 @@ const App = () => {
       <Navbar />
       <Routes />
       <SubFooter />
-      <Footer />
+      <BusHireFooter />
     </div>
   );
 };

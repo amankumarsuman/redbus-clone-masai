@@ -10,6 +10,7 @@
   flex-direction: column;
   align-items: flex-start;
 }
+
 .subFootercontainer_eachSection > h4 {
   font-weight: 900;
   line-height: 1.26;
@@ -27,6 +28,9 @@
   min-width: 40%;
   font-weight: 500;
 }
+.subFootercontainer_eachSection > p:hover {
+  color: red;
+    }
 .subFootercontainer_alternateSection {
   display: flex;
   flex-direction: column;
@@ -43,3 +47,7 @@
   min-width: 40%;
   font-weight: 500;
 }
+.subFootercontainer_alternateSection >P:hover{
+  color: red;
+}
+
