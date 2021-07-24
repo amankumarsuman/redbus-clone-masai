@@ -7,10 +7,12 @@ const busController = require("./controllers/busController");
 const bookingController = require("./controllers/booking");
 const customerController = require("./controllers/customer");
 const routeController = require("./controllers/route");
+const dropBoardPointController = require("./controllers/dropBoardPoint");
 app.use("/api/booking", bookingController);
 app.use("/api/customers", customerController);
 app.use("/api/routes", routeController);
 app.use("/api/bus", busController);
+app.use("/api/location", dropBoardPointController);
 
 const start = async () => {
   await connect();

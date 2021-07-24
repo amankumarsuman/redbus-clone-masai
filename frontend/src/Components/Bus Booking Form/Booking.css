@@ -1,0 +1,314 @@
+.full_body{
+    padding: 20px;
+ }
+ 
+ .modify{
+     display: flex;
+     flex-flow: wrap;
+     column-gap: 20px;
+ }
+ 
+ .modify p{
+     font-size: 14px;
+     color: #3e3e52;
+     font-weight: 700;
+     word-break: break-word;
+     font-family: Montserrat;
+ }
+ 
+ .modify button{
+     border: 1px solid #3e3e52;
+     border-radius: 3px;
+     background-color: #f8f4f4;
+     padding: 5px 25px;
+     display: inline-block;
+     font-weight: 400;
+     word-break: break-word;
+     font-family: Montserrat;
+     font-size: 14px;
+     height: 30px;
+     margin-top: 5px;
+ }
+ 
+ .modify li {
+     margin-top: -4px;
+         list-style-type: none;
+      
+ }
+ 
+ .search{
+     display: flex;
+     flex-flow: wrap;
+     column-gap: 30px;
+ }
+ 
+ .search p{
+     text-align: left;
+ }
+ 
+ .search input{
+     border:none;
+     border-bottom: 1px solid black;
+     padding: 5px 10px;
+     outline: none;
+ }
+ 
+ .search button{
+     margin-top: 15px;
+     border-radius: 2px;
+     background-color: #d84f55;
+     box-shadow: 0 2px 4px 0 hsl(0deg 0% 77% / 50%);
+     font-weight: 700;
+     padding: 7px 18px 8px;
+     overflow: hidden;
+     position: relative;
+     text-decoration: none;
+     transition: .1s;
+     border: none;
+     text-align: center;
+     color: #fff;
+     display: inline-block;
+     text-transform: uppercase;
+     font-size: 13px;
+     margin-top: 50px;
+ }
+ .bookingPageMiddle{
+     display: grid;
+     grid-template-columns: 18% 80%;
+     column-gap: 20px;
+     text-align: left;
+ }
+ 
+ .topImages{
+     display: flex;
+     flex-flow: wrap;
+     column-gap: 10px;
+     margin-top: 20px;
+ }
+ .topImages  img{
+     width: 183px;
+     height: 120px;
+     margin-right: 25px;
+     cursor: pointer;
+     display: inline-block;
+     text-align: center;
+     border-radius: 7px;
+     position: relative;
+ }
+ 
+ .heading{
+     display: flex;
+     flex-flow: wrap;
+     column-gap: 120px;
+ }
+ .heading  div:nth-child(2){
+   display:flex;
+   flex-flow: wrap;
+   column-gap: 50px;
+   margin-top: -15px;
+ }
+ 
+ .heading  div:nth-child(3){
+     display:flex;
+     flex-flow: wrap;
+     column-gap: 40px;
+     margin-top: -15px;
+   }
+  .busDetails{
+   border: 1px solid gray;
+   padding: 10px;
+  } 
+ /* .busDetails:hover{
+      
+ } */
+  .busDetailsOne{
+      display: grid;
+      grid-template-columns: 30% 70%;
+       
+  }
+  .busDetailsOne :nth-child(2){
+      display: flex;
+      flex-flow: wrap;
+      column-gap: 60px;
+  }
+  .busDetailsOne :nth-child(2) > p:nth-child(1){
+  margin-left: 40px;
+  }
+ 
+  .busDetailsTwo{
+    display: grid;
+    grid-template-columns: 55% 30% 15%;
+  }
+  .busDetailsTwo :nth-child(2){
+     display: flex;
+     flex-flow: wrap;
+     column-gap: 50px; 
+ }
+ .view{
+     background-color:  #cbcbcb;
+ }
+ .viewSeats{
+     display: grid;
+     grid-template-columns: 50% 40%;
+     padding: 100px;
+     column-gap: 10%;
+ }
+  
+ .viewSeats > div >  div:nth-child(1){
+     background-color: #d84e55;
+     color: #fff;
+     padding: 3px 20px;
+     font-size: 12px;
+     font-weight: 400;
+ }
+ 
+  
+ .gridContainer {
+     display: grid;
+     grid-template-columns: auto auto auto auto auto ;
+     background-color: #eee;
+     padding: 20px;
+      
+   }
+   .gridItem {
+     background-color: rgba(255, 255, 255, 0.8);
+     border: 1px solid rgba(0, 0, 0, 0.8);
+     width: 40px;
+     height: 20px;
+     text-align: center;
+     margin-bottom: 10px;
+   }
+ 
+   .gridContainer > div:nth-child(n+11){
+       margin-top: 25px;
+       margin-bottom: 25px;
+   }
+ 
+   .seatPrice {
+       display: flex;
+       flex-flow: wrap;
+   }
+ 
+   .seatPrice p{
+       font-weight: 700;
+     padding-right: 15px;
+     float: left;
+     line-height: 30px;
+     margin: 0;
+     width: 130px;
+     text-align: right;
+     font-size: 14px;
+   }
+ 
+   .activeButton{
+     width: 75px!important;
+     margin-right: 10px;
+     border-radius: 2px;
+     border: 1px solid #ddd;
+     background-color: #3e3e52;
+     color:   #fff;
+     text-align: center;
+     cursor: pointer;
+     height: 33px;
+     padding: 6px 5px 4px;
+     font-size: 14px;
+     font-weight: 700;
+   }
+   .passiveButton{
+     width: 75px!important;
+     margin-right: 10px;
+     border-radius: 2px;
+     border: 1px solid #ddd;
+     background-color: #fff;
+     color: #3e3e52;
+     text-align: center;
+     cursor: pointer;
+     height: 33px;
+     padding: 6px 5px 4px;
+     font-size: 14px;
+     font-weight: 700;
+   }
+ 
+   /* .seatLegend{
+ 
+   } */
+   .seatLegend h3 {
+     display: block;
+     font-size: 1.17em;
+     margin-block-start: 1em;
+     margin-block-end: 1em;
+     margin-inline-start: 0px;
+     margin-inline-end: 0px;
+     font-weight: bold;
+   }
+ 
+   .seatLegend div{
+       display: flex;
+       flex-flow: wrap;
+   }
+   .viewPassiveButton{
+     margin-left: 85%;
+     display: inline-block;
+     padding: 6px 16px 7px;
+     text-transform: uppercase;
+     font-size: 13px;
+     font-weight: 400;
+     overflow: hidden;
+     position: relative;
+     text-decoration: none;
+     transition: .1s;
+     border: none;
+     text-align: center;
+     background-color: #d84e55;
+     color: #fff;
+   }
+   .viewActiveButton{
+     margin-left: 85%;
+     background-color: #465986;
+     display: inline-block;
+     padding: 6px 16px 7px;
+     text-transform: uppercase;
+     font-size: 13px;
+     font-weight: 400;
+     overflow: hidden;
+     position: relative;
+     text-decoration: none;
+     transition: .1s;
+     border: none;
+     text-align: center;
+     color: #fff;
+   }
+ 
+   .filterbuttons input {
+       border: none;
+       background-color: white;
+       word-break: break-word;
+     font-family: Montserrat;
+     font-size: 14px;
+     font-weight: 200;
+   }
+   .filterbuttons p{
+     color: #3e3e52;
+     font-size: 12px;
+     font-weight: 700;
+     word-break: break-word;
+     font-family: Montserrat;
+   }
+ 
+   .lowerbuttons > input {
+     height: 30px;
+     width: 92%;
+     margin-left: -10px;
+     padding-left: 25px;
+     border: 1px solid #ddd;
+     border-radius: 3px;
+   }
+ 
+   .lastbuttons > input {
+     height: 30px;
+      
+     margin-left: -10px;
+     padding-left: 25px;
+     border: 1px solid #ddd;
+     border-radius: 3px;
+   }
