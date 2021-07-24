@@ -6,7 +6,15 @@ const customerSchema = new Schema(
       type: String,
       required: true,
     },
-    mobile: {
+    name: {
+      type: String,
+      required: true,
+    },
+    googleId: {
+      type: String,
+      required: true,
+    },
+    profilePicture: {
       type: String,
       required: true,
     },
