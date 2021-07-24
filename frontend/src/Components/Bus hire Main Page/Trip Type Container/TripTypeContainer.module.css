@@ -1,13 +1,13 @@
 .tripTypecontainer {
   box-shadow: 0 4px 8px 0 rgba(100, 100, 100, 0.5);
   display: flex;
-  width: 30%;
+  width: 28%;
   flex-direction: column;
   margin-top: 8px;
   padding: 0;
   box-sizing: border-box;
   position: fixed;
-  right: 4%;
+  right: 18%;
   top: 9%;
 }
 .hireVehicleHeading {
