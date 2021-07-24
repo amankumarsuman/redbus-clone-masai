@@ -1,0 +1,7 @@
+get route buses available tickets = "/:departure/:arrival/:date"
+query selector fields = {
+    "sort":fare
+    "order:["asc", "desc", default:"desc"]
+    departureTime:{Number : 0 to 23}
+    busType: [seater, sleeper, ac, non-ac]
+}

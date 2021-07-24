@@ -17,13 +17,10 @@ const LandingPage = () => {
   const [date, setDate] = React.useState("");
   const [filteredSources, setFilteredSources] = React.useState([]);
   const [filteredDestinations, setFilteredDestinations] = React.useState([]);
-  const [
-    displayDepartureDropdown,
-    setDisplayDepartureDropdown,
-  ] = React.useState(false);
-  const [displayArrivalDropdown, setDisplayArrivalDropdown] = React.useState(
-    false
-  );
+  const [displayDepartureDropdown, setDisplayDepartureDropdown] =
+    React.useState(false);
+  const [displayArrivalDropdown, setDisplayArrivalDropdown] =
+    React.useState(false);
   const dispatch = useDispatch();
 
   React.useEffect(() => {
