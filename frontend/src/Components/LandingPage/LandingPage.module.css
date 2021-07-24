@@ -40,7 +40,7 @@
   font-size: 16px;
   cursor: pointer;
   margin-right: 20px;
-  margin-left: 20PX;
+  /* margin-left: 20PX; */
 }
 .LandingPage__form__arrival__dropdown,
 .LandingPage__form__departure__dropdown {

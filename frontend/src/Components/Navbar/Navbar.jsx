@@ -12,8 +12,7 @@ import {
   loginFailure,
   logout,
   addCustomerMongo,
-} from "../../Redux/auth/actions";
-import ComingSoonModal from "../../Elements/ComingSoonModal";
+} from "../../Redux/auth/action";
 import { useHistory } from "react-router-dom";
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -51,7 +50,6 @@ const Navbar = () => {
 
   return (
     <div className={styles.Navbar}>
-      <ComingSoonModal isOpen={isModelOpen} setIsOpen={setIsModelOpen} />
       <div className={styles.leftSide_header}>
         <img
           src="https://www.redbus.in/i/59538b35953097248522a65b4b79650e.png"

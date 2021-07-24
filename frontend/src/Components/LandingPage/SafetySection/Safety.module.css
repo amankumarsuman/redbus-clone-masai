@@ -3,20 +3,24 @@
 } */
 
 .mainContainer {
-  width: 72%;
+  width: 80%;
   margin: 30px auto;
   display: flex;
   border: 1px solid grey;
   padding: 10px 10px 30px 10px;
+ 
 }
 
 .imgBox {
   width: 15%;
   text-align: center;
   padding-top: 20px;
+
 }
 .imgBox > img {
-  width: 70%;
+  /* width: 70%; */
+
+  margin-right: 20px;
 }
 .writingConatiner {
   padding-left: 5px;
@@ -59,3 +63,9 @@
 .lowerFlexItems:nth-child(even) {
   margin: 0 20px;
 }
+.img >img{
+    width: 25px;
+    margin-right: 5px;
+   
+}
+
