@@ -100,14 +100,14 @@ const Navbar = () => {
           </li>
           <li>
             <MdAccountCircle
-              className={styles.icons}
+              className={styles.icons2}
               style={{ fontSize: "30px",marginLeft:"-10px" }}
             />
           </li>
           <li>
             <div>
               <RiArrowDropDownLine
-                className={styles.icons}
+                className={styles.icons3}
                 onClick={handleClick2}
               />
 
