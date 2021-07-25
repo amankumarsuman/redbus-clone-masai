@@ -7,10 +7,10 @@ body {
 }
 .bannerElementDiv {
   position: absolute;
-  width: 400px;
+  width: 360px;
   display: flex;
   flex-direction: column;
-  left: 15%;
+  left: 17%;
   top: 8%;
 }
 .bannerBusHireText {
@@ -60,7 +60,7 @@ body {
 }
 .BusHireFeatures {
   background-color: #3e3e52;
-  width: 219px;
+  width: 215px;
   height: 214px;
   border-radius: 8px;
   border: 2px solid #ddd;
@@ -79,13 +79,13 @@ body {
 }
 .BusHireEachFeatureText {
   font-size: 16px;
-  font-weight: 900;
+  font-weight: 600;
   color: #3e3e52;
   margin-top: 10px;
 }
 .rcommutediv {
-  width: 33%;
-  margin: 5% 7%;
+  width: 30%;
+  margin: 5% 17%;
   padding: 12px 12px 8px;
   border-radius: 2px;
   background-color: #e6eeff;
@@ -162,7 +162,7 @@ body {
 }
 .vehicleText {
   position: absolute;
-  top: 10%;
+  top: 0%;
   left: 5%;
 }
 .vehicleText > h3 {
@@ -204,7 +204,7 @@ body {
   background: url("https://www.redbus.in/bushire/static/mwebv2/home/group%20(2).svg");
   background-size: cover;
   margin: 20px 0px;
-  padding: 20px;
+  padding: 0px 20px;
 }
 .whyBookWithBushire_insideFeature {
   display: flex;
@@ -222,6 +222,7 @@ body {
   height: 130px;
 }
 .whyBookWithBushire_insideFeature_text > h3 {
+  margin-top: -10px;
   font-size: 24px;
   font-weight: 700;
   color: white;
@@ -230,7 +231,7 @@ body {
   font-size: 14px;
   line-height: 1.57;
   color: #3e3e52;
-  width: 40%;
+  width: 46%;
   margin-top: 20px;
 }
 .list {
