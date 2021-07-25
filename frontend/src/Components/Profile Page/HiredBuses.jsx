@@ -5,7 +5,7 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 const HiredBuses = () => {
-  const [allBookingsHire, setAllBookingsHire] = React.useState([]);
+  const [allBookingsHire, setAllBookingsHire] = useState([]);
 
   const currentCustomer = useSelector(
     (state) => state.authReducer.currentCustomer
