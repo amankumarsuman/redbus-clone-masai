@@ -32,4 +32,21 @@ const getRoutes = (departure, arrival, date) => {
   };
 };
 
-export { getRoutes };
+const getRoutesWithFilter = (departure, arrival, date, params) => {
+  return async (dispatch) => {
+    dispatch(getRoutesRequest());
+    try {
+      const res = await axios.get(
+        `${baseURL}/routes/${departure}/${arrival}/${date}`,
+        {
+          params: params,
+        }
+      );
+      dispatch(getRoutesSuccess(res.data));
+    } catch (err) {
+      dispatch(getRoutesFailure());
+    }
+  };
+};
+
+export { getRoutes, getRoutesWithFilter };

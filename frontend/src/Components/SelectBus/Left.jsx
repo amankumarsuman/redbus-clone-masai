@@ -16,6 +16,8 @@ import DirectionsBusIcon from "@material-ui/icons/DirectionsBus";
 import WeekendIcon from "@material-ui/icons/Weekend";
 import AirlineSeatIndividualSuite from "@material-ui/icons/AirlineSeatIndividualSuite";
 import AvTimerIcon from "@material-ui/icons/AvTimer";
+import { useLocation, useParams } from "react-router-dom";
+import { getRoutes, getRoutesWithFilter } from "../../Redux/routes/action";
 
 const initState = {
   liveTracking: false,
@@ -51,7 +53,12 @@ const initState = {
 };
 const Left = () => {
   const [sideFilterValues, setSideFilterValues] = React.useState(initState);
-
+  let { search } = useLocation();
+  const query = new URLSearchParams(search);
+  const departure = query.get("departure");
+  const arrival = query.get("arrival");
+  const date = query.get("date");
+  let params = {};
   //Filter and sort reducer
   let dispatch = useDispatch();
   const filterBusType = useSelector(
@@ -106,20 +113,14 @@ const Left = () => {
 
   // handle departure time filters
   const handleDepartureTimeChange = (e) => {
-    const name = e.target.name;
-    setSideFilterValues({
-      ...sideFilterValues,
-      departureTime: {
-        ...sideFilterValues.departureTime,
-        [name]: e.target.checked,
-      },
-    });
-    const payload = {
-      key: "departureTime",
-      value: { ...filterDepartureTime, [name]: e.target.checked },
-    };
-
-    dispatch(updateFilterDetails(payload));
+    if (e.target.checked) {
+      params = {
+        departureTime: 6,
+      };
+      dispatch(getRoutesWithFilter(departure, arrival, date, params));
+    } else {
+      dispatch(getRoutes(departure, arrival, date));
+    }
   };
 
   // handle arrival time filters
@@ -152,12 +153,16 @@ const Left = () => {
       },
     });
 
-    const payload = {
-      key: "busType",
-      value: { ...filterBusType, [name]: e.target.checked },
-    };
+    if (e.target.checked) {
+      params = {
+        departureTime: 6,
+        busType: e.target.name,
+      };
 
-    dispatch(updateFilterDetails(payload));
+      dispatch(getRoutesWithFilter(departure, arrival, date, params));
+    } else {
+      dispatch(getRoutes(departure, arrival, date));
+    }
   };
 
   return (
@@ -216,7 +221,6 @@ const Left = () => {
               type="checkbox"
               name="before6am"
               onChange={handleDepartureTimeChange}
-              checked={sideFilterValues.departureTime["before6am"]}
             />
             &nbsp;&nbsp;
             <AvTimerIcon />
@@ -234,7 +238,8 @@ const Left = () => {
             <input
               type="checkbox"
               name="6amto12pm"
-              onChange={handleDepartureTimeChange}
+              // onChange={handleDepartureTimeChange}
+              onChange={() => handleDepartureTimeChange(6)}
               checked={sideFilterValues.departureTime["6amto12pm"]}
             />
             &nbsp;&nbsp;

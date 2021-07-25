@@ -53,7 +53,7 @@ const getOneRoute = async (req, res) => {
   const busIdWithBookedSeats = {};
 
   // get the seats booked for each matched buses
-for (let i = 0; i < availableBuses.length; i++) {
+  for (let i = 0; i < availableBuses.length; i++) {
     const bookings = await Booking.find({
       $and: [{ "departureDetails.date": date, busId: availableBuses[i]._id }],
     })
@@ -72,7 +72,6 @@ for (let i = 0; i < availableBuses.length; i++) {
     busIdWithBookedSeats: busIdWithBookedSeats,
   });
 };
-
 
 const addRoute = async (req, res) => {
   const route = await Route.create(req.body);
