@@ -152,13 +152,12 @@ const Left = () => {
         [name]: e.target.checked,
       },
     });
-
+    console.log(e.target.name);
     if (e.target.checked) {
       params = {
         departureTime: 6,
-        busType: e.target.name,
+        busType: e.target.name == "nonac" ? "non-ac" : e.target.name,
       };
-
       dispatch(getRoutesWithFilter(departure, arrival, date, params));
     } else {
       dispatch(getRoutes(departure, arrival, date));
