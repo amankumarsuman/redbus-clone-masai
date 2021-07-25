@@ -4,11 +4,13 @@ body {
   font-size: 14px;
 }
 .Navbar {
+  padding: 10px;
   background-color: #d84f57;
   display: flex;
   justify-content: space-between;
   align-items: center;
- 
+  position: fixed;
+  z-index: 10;
 }
 .Navbar li {
   cursor: pointer;
@@ -27,7 +29,7 @@ body {
 .Navbar__listOne {
   list-style: none;
 
-  /* margin: 0 20px; */
+  margin: 0 20px;
 }
 .Navbar__listOne li {
   font-weight: bolder;
@@ -45,27 +47,50 @@ body {
 }
 .icons {
   font-size: 30px;
-  margin-left: -35px;
+  margin-left: -125px;
   margin-top: 5px;
+  /* border: 5px solid black; */
 }
+
+.icons2 {
+  font-size: 30px;
+  /* margin-left: -125px; */
+  margin-top: 5px;
+  /* border: 5px solid black; */
+}
+
+.icons3 {
+  font-size: 30px;
+  margin-left: -125px;
+  margin-top: 5px;
+  /* border: 5px solid black; */
+}
+
 .rightSide_header {
   display: inline-block;
   margin: 0 10px;
   color: white;
   display: flex;
-  width: 350px;
+  width: 50vw;
   justify-content: space-evenly;
   align-items: center;
 }
+
+.rightSide_header li:nth-child(2n) {
+  margin-left: -80px;
+}
+
 .leftSide_header {
   display: inline-block;
   margin: 0 10px;
   color: white;
   display: flex;
-  width: 400px;
+  width: 40vw;
   justify-content: space-evenly;
   align-items: center;
 }
 .leftSide_header img {
   cursor: pointer;
+  margin-left: 100px;
+  margin-right: -50px;
 }
