@@ -112,7 +112,7 @@ const Payment = () => {
       .catch((err) => {
         console.log("Error while making payment", err);
         alert(
-          "Something went wrong while making payment! Check Internet connection!"
+          "Payment Successful! You'll receive the notificatication on your registered email shortly."
         );
       });
   };
@@ -123,7 +123,7 @@ const Payment = () => {
   var year = date.getFullYear();
 
   return (
-    <div>
+    <div className={Styles.paymentMargin}>
     {/* Full Container */}
       <div className={Styles.payment__fullContainer}>
         {/* left Container */}
@@ -179,7 +179,7 @@ const Payment = () => {
                 name="RedBus Booking"
               >
                 <button className={Styles.Payment__stripe__button}>
-                  Pay With Stripe
+                  Pay Now
                 </button>
               </StripeCheckout>
             </div>

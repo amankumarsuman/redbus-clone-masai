@@ -49,6 +49,10 @@ body {
   line-height: 1.25;
   color: #ffef96;
 }
+.paymentMargin {
+  margin-top: 85px;
+
+}
 .payment__fullContainer {
   margin: 3% 5%;
   display: flex;
