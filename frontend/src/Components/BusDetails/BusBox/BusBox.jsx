@@ -23,8 +23,8 @@ const BusBox = ({
   routeDetails,
 }) => {
   // capturing duration in redux store
-  var avgRating = rating;
-  var totalReviews = 10;
+  var avgRating = (rating.reduce((a, b) => a + b) / rating.length).toFixed(2);
+  var totalReviews = rating.length;
   var seatPrice = fare * Number(routeDetails.route.distance);
   var busDepartureTime = departureTime;
   var busArrivalTime = (

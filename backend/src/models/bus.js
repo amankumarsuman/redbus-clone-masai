@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const busSchema = new Schema(
   {
+    operatorName: {
+      type: String,
+      required: false,
+    },
     busType: {
       type: String,
       required: true,
@@ -11,7 +15,7 @@ const busSchema = new Schema(
       required: true,
     },
     rating: {
-      type: Number,
+      type: [Number],
       required: true,
     },
     totalSeats: {
