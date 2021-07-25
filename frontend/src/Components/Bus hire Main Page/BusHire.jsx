@@ -241,9 +241,9 @@ const BusHire = () => {
                 />
                 <div style={{ marginTop: "20px" }}>
                   <div className={Styles.BusHireEachFeatureText}>
-                    Verified Drivers and
+                    Verified Drivers 
                   </div>
-                  <div className={Styles.BusHireEachFeatureText}> Vehicles</div>
+                  <div className={Styles.BusHireEachFeatureText}>and Vehicles</div>
                 </div>
               </div>
             </div>
@@ -307,23 +307,28 @@ const BusHire = () => {
           <div className={Styles.bookInEasySteps_heading}>
             Why book with Bus Hire
           </div>
+          <br />
           <div className={Styles.whyBookWithBushire_firstFeature}>
             <div className={Styles.whyBookWithBushire_insideFeature}>
               <div className={Styles.whyBookWithBushire_insideFeature_text}>
-                <h3>Plan the perfect</h3>
-                <h3>group trip.</h3>
+                <h3>Plan the perfect group trip</h3>
+                {/* <h3>group trip.</h3> */}
                 <p>Choose from</p>
-                <div
+                <div>
+                Outstation | Local | Airport
+                </div>
+                <div></div>
+                {/* <div
                   style={{
                     display: "flex",
                     justifyContent: "space-between",
                     width: "250px",
                   }}
                 >
-                  <h3>Outstation</h3>
+                  <h3>Outstation </h3>
                   <h3>Local</h3>
                   <h3>Airport</h3>
-                </div>
+                </div> */}
               </div>
 
               <img
@@ -460,7 +465,7 @@ const BusHire = () => {
           </div>
           <div>
             <img
-              style={{ marginTop: "30px", height: "300px" }}
+              style={{ marginTop: "30px", height: "290px" }}
               src="https://www.redbus.in/bushire/static/mwebv2/home/city-list.svg"
               alt=""
             />
