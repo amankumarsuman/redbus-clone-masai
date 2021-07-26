@@ -79,7 +79,7 @@ const LandingPage = () => {
           <div className={styles.LandingPage__form__date}>
             <input
               type="date"
-              placeholder="Date"
+              placeholder="date"
               value={date}
               onChange={(e) => {
                 setDate(e.target.value);

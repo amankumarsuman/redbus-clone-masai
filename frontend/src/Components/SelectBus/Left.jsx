@@ -222,7 +222,7 @@ const Left = () => {
               onChange={handleDepartureTimeChange}
             />
             &nbsp;&nbsp;
-            <AvTimerIcon />
+            <AccessAlarmIcon />
             &nbsp;&nbsp;
             <p>Before 6 am </p>
           </li>
@@ -242,7 +242,7 @@ const Left = () => {
               checked={sideFilterValues.departureTime["6amto12pm"]}
             />
             &nbsp;&nbsp;
-            <AvTimerIcon />
+            <AccessAlarmIcon />
             &nbsp;&nbsp;
             <p>6 am to 12 pm </p>
           </li>
@@ -388,7 +388,7 @@ const Left = () => {
               checked={sideFilterValues.arrivalTime["before6am"]}
             />
             &nbsp;&nbsp;
-            <AvTimerIcon />
+            <AccessAlarmIcon />
             &nbsp;&nbsp;
             <p>Before 6 am</p>
           </li>
@@ -407,7 +407,7 @@ const Left = () => {
               checked={sideFilterValues.arrivalTime["6amto12pm"]}
             />
             &nbsp;&nbsp;
-            <AvTimerIcon />
+            <AccessAlarmIcon />
             &nbsp;&nbsp;
             <p>6 am to 12 pm</p>
           </li>

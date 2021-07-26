@@ -486,7 +486,7 @@ const Payment = () => {
                 className={Styles.travel_specification}
                 style={{ fontWeight: "bold" }}
               >
-                Rs. {passFare}
+                INR {passFare}
               </div>
             </div>
           </div>
