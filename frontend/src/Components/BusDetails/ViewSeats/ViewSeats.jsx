@@ -226,7 +226,7 @@ const ViewSeats = ({
                 Taxes will be calculated during payment
               </span>
             </div>
-            <div>{selectedSeats.length * seatPrice}</div>
+            <div>INR {Math.floor(selectedSeats.length * seatPrice)}</div>
           </div>
           <div className={styles.mainContainer37}>
             <FormDrawer />
