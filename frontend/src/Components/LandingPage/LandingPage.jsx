@@ -12,7 +12,7 @@ const LandingPage = () => {
   const history = useHistory();
   const [departure, setDeparture] = React.useState("");
   const [arrival, setArrival] = React.useState("");
-  const [date, setDate] = React.useState("");
+  const [date, setDate] = React.useState("DD/MM/YYYY");
   const [filteredSources, setFilteredSources] = React.useState([]);
   const [filteredDestinations, setFilteredDestinations] = React.useState([]);
   const [displayDepartureDropdown, setDisplayDepartureDropdown] =
@@ -79,7 +79,7 @@ const LandingPage = () => {
           <div className={styles.LandingPage__form__date}>
             <input
               type="date"
-              placeholder="Date"
+              placeholder="MM/DD/YYYY"
               value={date}
               onChange={(e) => {
                 setDate(e.target.value);
