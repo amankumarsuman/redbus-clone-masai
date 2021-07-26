@@ -89,7 +89,7 @@ const Left = () => {
     dispatch(updateFilterDetails(payload));
   };
 
-  // handling reschedulable filter
+  // reschedulable filter
   const handleReschedulableClick = () => {
     setSideFilterValues({
       ...sideFilterValues,
@@ -104,7 +104,7 @@ const Left = () => {
     dispatch(updateFilterDetails(payload));
   };
 
-  // handle departure time filters
+  //  departure time filters
   const handleDepartureTimeChange = (e) => {
     const name = e.target.name;
     setSideFilterValues({
@@ -122,7 +122,7 @@ const Left = () => {
     dispatch(updateFilterDetails(payload));
   };
 
-  // handle arrival time filters
+  //  arrival time filters
   const handleArrivalTimeChange = (e) => {
     const name = e.target.name;
     setSideFilterValues({
@@ -141,7 +141,7 @@ const Left = () => {
     dispatch(updateFilterDetails(payload));
   };
 
-  // handle bus type filters
+  //  bus type filters
   const handleBusTypeChange = (e) => {
     const name = e.target.name;
     setSideFilterValues({
