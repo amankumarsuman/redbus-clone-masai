@@ -26,29 +26,21 @@ const getOneRoute = async (req, res) => {
     .exec();
 
   // get all buses for this route
-  let availableBuses = await Bus.find({ routes: route._id })
+  console.log(Number(departureTime));
+  let availableBuses = await Bus.find({
+    $and: departureTime
+      ? [
+          {
+            routes: route._id,
+            busType: busType ? busType : new RegExp(""),
+            departureTime: { $gt: Number(departureTime) },
+          },
+        ]
+      : [{ routes: route._id, busType: busType ? busType : new RegExp("") }],
+  })
     .sort(sort ? { [sort]: val } : null)
     .lean()
     .exec();
-
-  availableBuses = availableBuses.filter((bus) => {
-    if (busType && departureTime) {
-      if (busType == bus.busType && departureTime > Number(bus.departureTime)) {
-        return true;
-      }
-      return false;
-    } else if (departureTime) {
-      if (departureTime > Number(bus.departureTime)) {
-        return true;
-      }
-      return false;
-    } else {
-      if (busType == bus.busType) {
-        return true;
-      }
-    }
-    return true;
-  });
 
   const busIdWithBookedSeats = {};
 

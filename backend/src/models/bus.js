@@ -11,7 +11,7 @@ const busSchema = new Schema(
       required: true,
     },
     departureTime: {
-      type: String,
+      type: Number,
       required: true,
     },
     rating: {
