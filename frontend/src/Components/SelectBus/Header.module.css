@@ -58,7 +58,7 @@
   color: #3e3e52;
   font-weight: 700;
   word-break: break-word;
-  font-family: Montserrat;
+  /* font-family: Montserrat; */
   text-transform: uppercase;
 }
 
@@ -70,7 +70,7 @@
   display: inline-block;
   font-weight: 400;
   word-break: break-word;
-  font-family: Montserrat;
+  /* font-family: Montserrat; */
   font-size: 14px;
   height: 30px;
   margin-top: 5px;

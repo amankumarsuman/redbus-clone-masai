@@ -96,7 +96,7 @@ const Left = () => {
     dispatch(updateFilterDetails(payload));
   };
 
-  // handling reschedulable filter
+  // reschedulable filter
   const handleReschedulableClick = () => {
     setSideFilterValues({
       ...sideFilterValues,
@@ -111,7 +111,7 @@ const Left = () => {
     dispatch(updateFilterDetails(payload));
   };
 
-  // handle departure time filters
+  //  departure time filters
   const handleDepartureTimeChange = (e) => {
     if (e.target.checked) {
       params = {
@@ -123,7 +123,7 @@ const Left = () => {
     }
   };
 
-  // handle arrival time filters
+  //  arrival time filters
   const handleArrivalTimeChange = (e) => {
     const name = e.target.name;
     setSideFilterValues({
@@ -142,7 +142,7 @@ const Left = () => {
     dispatch(updateFilterDetails(payload));
   };
 
-  // handle bus type filters
+  //  bus type filters
   const handleBusTypeChange = (e) => {
     const name = e.target.name;
     setSideFilterValues({
@@ -222,7 +222,7 @@ const Left = () => {
               onChange={handleDepartureTimeChange}
             />
             &nbsp;&nbsp;
-            <AvTimerIcon />
+            <AccessAlarmIcon />
             &nbsp;&nbsp;
             <p>Before 6 am </p>
           </li>
@@ -242,7 +242,7 @@ const Left = () => {
               checked={sideFilterValues.departureTime["6amto12pm"]}
             />
             &nbsp;&nbsp;
-            <AvTimerIcon />
+            <AccessAlarmIcon />
             &nbsp;&nbsp;
             <p>6 am to 12 pm </p>
           </li>
@@ -388,7 +388,7 @@ const Left = () => {
               checked={sideFilterValues.arrivalTime["before6am"]}
             />
             &nbsp;&nbsp;
-            <AvTimerIcon />
+            <AccessAlarmIcon />
             &nbsp;&nbsp;
             <p>Before 6 am</p>
           </li>
@@ -407,7 +407,7 @@ const Left = () => {
               checked={sideFilterValues.arrivalTime["6amto12pm"]}
             />
             &nbsp;&nbsp;
-            <AvTimerIcon />
+            <AccessAlarmIcon />
             &nbsp;&nbsp;
             <p>6 am to 12 pm</p>
           </li>

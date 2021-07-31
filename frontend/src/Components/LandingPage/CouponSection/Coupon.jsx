@@ -6,7 +6,7 @@ const Coupon = () => {
     <div className={styles.couponContainer}>
       <div className={styles.flex}>
         <div className={styles.coupon}>
-          <span>save upto rs 150</span>
+          <span>Save up to Rs 150 on bus tickets</span>
           <span className={styles.offerImage}>
             <img
               src="https://st.redbus.in/Images/INDOFFER/safetyplus/274_147.png"
@@ -16,7 +16,7 @@ const Coupon = () => {
           <span>Use code FIRST</span>
         </div>
         <div className={styles.coupon}>
-          <span>save upto rs 150</span>
+          <span>Save up to Rs 150 on bus tickets</span>
           <span className={styles.offerImage}>
             <img
               src="https://s1.rdbuz.com/images/MobileOffers/amazon/offertile..png"
@@ -26,7 +26,7 @@ const Coupon = () => {
           <span>Use code FIRST</span>
         </div>
         <div className={styles.coupon}>
-          <span>save upto rs 150</span>
+          <span>Save up to Rs 150 on bus tickets</span>
           <span className={styles.offerImage}>
             <img
               src="https://st.redbus.in/Images/APSRTC/new/APSRTC_1.png"
